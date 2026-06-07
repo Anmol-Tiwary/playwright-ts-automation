@@ -1,0 +1,27 @@
+{
+  "name": "playwright-ts-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "test": "npx playwright test",
+ 
+  "make-apt:chrome": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",
+  "make-apt:edge": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=msedge",
+
+  "login:chrome": "npx playwright test tests/functional/login.spec.ts --headed --project=chromium",
+  "login:edge": "npx playwright test tests/functional/login.spec.ts --headed --project=msedge"
+},
+  "keywords": [
+    "Playwright",
+    "playwright-e2e-test",
+    "playwright-mcp"
+  ],
+  "author": "Anmol_Kumar",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2"
+  }
+}
