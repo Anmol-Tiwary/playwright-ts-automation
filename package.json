@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "npx playwright test",
- 
-  "make-apt:chrome": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",
-  "make-apt:edge": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=msedge",
 
-  "login:chrome": "npx playwright test tests/functional/login.spec.ts --headed --project=chromium",
-  "login:edge": "npx playwright test tests/functional/login.spec.ts --headed --project=msedge"
-},
+    "test": "npx playwright test",
+    "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
+    "ele-init": "npx playwright test tests/demo/ele.handling.make.apntmt.spec.ts --headed",
+    "make-apt:chrome": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",
+    "make-apt:edge": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=msedge",
+    "login:chrome": "npx playwright test tests/functional/login.spec.ts --headed --project=chromium",
+    "login:edge": "npx playwright test tests/functional/login.spec.ts --headed --project=msedge"
+  },
   "keywords": [
     "Playwright",
     "playwright-e2e-test",
@@ -22,6 +23,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2"
+    "@types/node": "^25.5.2",
+    "allure-playwright": "^3.9.0"
   }
 }
