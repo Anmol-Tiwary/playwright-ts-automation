@@ -35,18 +35,18 @@ test.describe("Inventory feature", () => {
             priceArr.push(price)
         }
 
-let priceArrNum = priceArr.map((item) => parseFloat(item.replace("$", "")))
-console.log(`>> Modified arr: ${priceArrNum}`)
+        let priceArrNum = priceArr.map((item) => parseFloat(item.replace("$", "")))
+        console.log(`>> Modified arr: ${priceArrNum}`)
 
-let zeroValueProd = priceArrNum.filter((item) => item <=0);
+        let zeroValueProd = priceArrNum.filter((item) => item <= 0);
 
-if (zeroValueProd.length>0) {
-    console.log(`Error: Zero value prod found, ${zeroValueProd}`)
-} else {
-    console.log("all prod pricess are non zero");
-}
+        if (zeroValueProd.length > 0) {
+            console.log(`Error: Zero value prod found, ${zeroValueProd}`)
+        } else {
+            console.log("all prod pricess are non zero");
+        }
 
-expect(zeroValueProd).toHaveLength(0)
+        expect(zeroValueProd).toHaveLength(0)
 
     })
 });
