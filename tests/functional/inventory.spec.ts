@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe("Inventory feature", () => {
 
-    test.beforeEach('login with valid credentials', async ({ page }) => {
+    test.beforeEach('login with valid credentials', async ({ page }, testInfo) => {
         await page.goto('https://www.saucedemo.com/');
         await page.locator('[data-test="username"]').fill('standard_user');
         await page.locator('[data-test="username"]').press('Tab');
@@ -12,6 +12,14 @@ test.describe("Inventory feature", () => {
         // loggin url assertion
         await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
         await expect(page).toHaveURL(/.*\/inventory/);
+
+        //Sucessful login Sc
+        let Sc = await page.screenshot({fullPage: true});
+        await testInfo.attach("login page", {
+            body: Sc,
+            contentType: "image/png",
+        });
+
     });
 
     test("should validate the prie tag of product", async ({ page }) => {
