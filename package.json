@@ -6,6 +6,8 @@
   "scripts": {
 
     "test": "npx playwright test",
+    "demoTag": "npx playwright test --grep smoke --headed",
+    "invSmoke": "npx playwright test tests/functional/inventory.spec.ts --grep smoke --headed",
     "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
     "ele-init": "npx playwright test tests/demo/ele.handling.make.apntmt.spec.ts --headed",
     "make-apt:chrome": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",

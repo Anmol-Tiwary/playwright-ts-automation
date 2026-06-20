@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe("Inventory feature", () => {
+test.describe("Inventory feature",{annotation: {type: "Story", description: "to validate the products price in ecom page"}}, () => {
 
     test.beforeEach('login with valid credentials', async ({ page }, testInfo) => {
         await page.goto('https://www.saucedemo.com/');
@@ -22,7 +22,7 @@ test.describe("Inventory feature", () => {
 
     });
 
-    test("should validate the prie tag of product", async ({ page }) => {
+    test("should validate the prie tag of product",{annotation: {type: "Test", description: "Validating the prices of product"},tag: "@smoke" }, async ({ page }) => {
         // get a list of product
         let prodEles = page.locator(".inventory_item");
         await expect(prodEles).toHaveCount(6);
