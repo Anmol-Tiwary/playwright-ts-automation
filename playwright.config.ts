@@ -1,8 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
+import dotenv from 'dotenv'
+import { resolve } from 'dns';
+
+dotenv.config({path: path.resolve(__dirname, '.env')});
 
 export default defineConfig({
   testDir: './tests',
   timeout: 40 * 1000,
+  globalSetup: './tests/helpers/global-setup.ts',
   reporter: [['html',{
     open: "never",
   }],
@@ -13,7 +19,7 @@ export default defineConfig({
       suiteTitle: true,
       environmentInfo: {
         name: "TEST",
-        appNmae: "CURA",
+        appName: "CURA",
         Release: "Release 1.1",
       },
     },],
@@ -21,15 +27,21 @@ export default defineConfig({
   use: {
     headless: false,
     viewport: null,
-    launchOptions: {
-      args: ['--start-maximized'],
-    },
     screenshot: "only-on-failure",
+
+    //setting timeout globally for action
+    actionTimeout: 10000
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        browserName: 'chromium',
+        viewport: null,
+        launchOptions: {
+          args: ["--start-maximized"],
+        },
+      },
     },
     // {
     //   name: 'msedge',
