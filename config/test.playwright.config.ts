@@ -1,5 +1,5 @@
 ﻿import { defineConfig } from "@playwright/test";
-import path from "node:path";
+import path from "path";
 
 export default defineConfig({
     testDir: path.resolve(process.cwd(), "./tests"),
@@ -31,7 +31,7 @@ export default defineConfig({
             dbname: "",
             connectionStr: "",
         },
-    },
+    } as any,
     projects: [
         {
             name: "chromium",

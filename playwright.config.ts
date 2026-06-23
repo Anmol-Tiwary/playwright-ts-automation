@@ -5,7 +5,7 @@ import { resolve } from 'dns';
 
 dotenv.config({path: path.resolve(__dirname, '.env')});
 
-export default defineConfig({
+export const baseConfig = defineConfig({
   testDir: './tests',
   timeout: 40 * 1000,
   globalSetup: './tests/helpers/global-setup.ts',
