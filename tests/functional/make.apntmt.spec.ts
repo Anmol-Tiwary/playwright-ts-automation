@@ -8,7 +8,6 @@ const makeAppttestData = fileHelpers.readCsv(csvFilePath)
 test.describe("make Appointment", () => {
     test.beforeEach("Login with valid credentials", async ({ page }) => {
         //goto url and click on make appointment
-        
         await page.goto('https://katalon-demo-cura.herokuapp.com/');
         await page.getByRole('link', { name: 'Make Appointment' }).click();
         //provide the valid credentials and login and validate the login
@@ -24,12 +23,12 @@ test.describe("make Appointment", () => {
             await page.getByLabel('Facility').selectOption({ label: row.facility });
             await page.getByRole('checkbox', { name: 'Apply for hospital readmission' }).check();
             await page.getByRole('radio', { name: row.hcp }).check();
-            // open date picker and select the day from CSV (format MM/DD/YYYY)
-            const [mm, dd, yyyy] = row.visitDt.split('/');
+            // open date picker and select the day from CSV (format DD/MM/YYYY)
+            const [dd, mm, yyyy] = row.visitDt.split('/');
             const day = String(Number(dd));
             await page.getByRole('textbox', { name: 'Visit Date (Required)' }).click();
             // pick the day cell that belongs to the current month (exclude .new/.old cells)
-            const dayLocator = page.locator('td.day:not(.new):not(.old)', { hasText: day }).first();
+            const dayLocator = page.locator(`td.day:not(.new):not(.old):has-text("${day}")`).first();
             await dayLocator.click();
             await page.getByRole('textbox', { name: 'Comment' }).fill(`Booking for ${row.testId}`);
             await page.getByRole('button', { name: 'Book Appointment' }).click();

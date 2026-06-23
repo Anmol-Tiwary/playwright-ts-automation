@@ -9,7 +9,8 @@
     "invSmoke": "npx playwright test tests/functional/inventory.spec.ts --grep smoke --headed",
     "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
     "ele-init": "npx playwright test tests/demo/ele.handling.make.apntmt.spec.ts --headed",
-    "make-apt:chrome": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",
+    "make-apt": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=chromium",
+    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.apntmt.spec.ts --headed --project=chromium",
     "make-apt:edge": "npx playwright test tests/functional/make.apntmt.spec.ts --headed --project=msedge",
     "login:chrome": "npx playwright test tests/functional/login.spec.ts --headed --project=chromium",
     "login:edge": "npx playwright test tests/functional/login.spec.ts --headed --project=msedge"
