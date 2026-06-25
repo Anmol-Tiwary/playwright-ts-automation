@@ -1,10 +1,9 @@
 import { expect, type Page } from "@playwright/test";
 import BasePage from "./base.page";
 import { log } from "../helpers/loggers";
-import { url } from "node:inspector";
 
 //Constructor
-class HomePage extends BasePage {
+export default class HomePage extends BasePage {
     constructor(page : Page) {
         super(page);
     }

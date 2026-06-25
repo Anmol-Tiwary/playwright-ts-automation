@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
+    "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed --project=chromium",
     "test": "npx playwright test",
     "demoTag": "npx playwright test --grep smoke --headed",
     "invSmoke": "npx playwright test tests/functional/inventory.spec.ts --grep smoke --headed",
