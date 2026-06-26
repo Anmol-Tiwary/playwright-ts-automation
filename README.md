@@ -107,7 +107,10 @@ Playwright HTML reports are generated automatically after each test run.
 # View the HTML report
 npx playwright show-report
 ```
-
+Allure reporter
+I am also using Allure reports for generating better test reports
+# To view the report
+allure serve
 ---
 
 ## 🔄 CI/CD
