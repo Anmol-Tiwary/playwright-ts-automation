@@ -108,7 +108,6 @@ Playwright HTML and Allure reports are generated automatically after each test r
 npx playwright show-report
 npx playwright allure serve
 ```
-
 ---
 
 ## 🔄 CI/CD
