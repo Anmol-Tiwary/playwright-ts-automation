@@ -101,11 +101,12 @@ npx playwright test --debug
 
 ## 📊 Test Reports
 
-Playwright HTML reports are generated automatically after each test run.
+Playwright HTML and Allure reports are generated automatically after each test run.
 
 ```bash
 # View the HTML report
 npx playwright show-report
+npx playwright allure serve
 ```
 
 ---
