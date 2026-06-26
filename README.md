@@ -109,7 +109,6 @@ npx playwright show-report
 ```
 Allure reporter
 I am also using Allure reports for generating better test reports
-# To view the report
 allure serve
 ---
 
