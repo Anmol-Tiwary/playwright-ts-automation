@@ -8,6 +8,4 @@ node_modules/
 /playwright/.auth/
 /tests/demo/
 /allure-results/
-
-# VS Code
-.vscode/
+.env
