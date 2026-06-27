@@ -1,52 +1,58 @@
 import { defineConfig, devices } from '@playwright/test';
-import path from 'path';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+dotenv.config();
 
-dotenv.config({ path: path.resolve(__dirname, '.env') });
-
-export const baseConfig = defineConfig({
+export default defineConfig({
+  // ─── Test Directory ──────────────────────────────────────────────────
   testDir: './tests',
-  timeout: 40 * 1000,
-  globalSetup: path.resolve(__dirname, './tests/helpers/global-setup.ts'),
-  reporter: [['html', {
-    open: "never",
-  }],
-  [
-    "allure-playwright",
-    {
-      detail: true,
-      suiteTitle: true,
-      environmentInfo: {
-        name: "TEST",
-        appName: "CURA",
-        Release: "Release 1.1",
-      },
-    },],
+
+  // ─── Global Settings ─────────────────────────────────────────────────
+  timeout: 30000,
+  expect: { timeout: 5000 },
+  // fullyParallel: true,
+  // forbidOnly: !!process.env.CI,
+  // retries: process.env.CI ? 2 : 0,
+  // workers: process.env.CI ? 2 : undefined,
+
+  // ─── Reporters ───────────────────────────────────────────────────────
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['allure-playwright'],
+    ['junit', { outputFile: 'test-results/allure-results.xml' }],
   ],
+
+  // ─── Global Use Options ───────────────────────────────────────────────
   use: {
     headless: false,
-    screenshot: "only-on-failure",
-
-    //setting timeout globally for action
-    actionTimeout: 10000
+    screenshot: 'only-on-failure',
+    //video: 'retain-on-failure',
+    trace: 'on-first-retry',
+    actionTimeout: 10000,
+    navigationTimeout: 15000,
   },
+
+  // ─── Projects (Browsers) ─────────────────────────────────────────────
   projects: [
     {
       name: 'chromium',
-      use: {
-        browserName: 'chromium',
-        viewport: null,
-        launchOptions: {
-          args: ["--start-maximized"],
-        },
-      },
+      use: { ...devices['Desktop Chrome'] },
     },
-    // {
-    //   name: 'msedge',
-    //   use: {
-    //     ...devices['Desktop Edge'],
-    //     channel: 'msedge',
-    //   },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+    // ─── Mobile Viewports ──────────────────────────────────────────
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['iPhone 17 Pro'] },
+    },
   ],
+
+  // ─── Output Folder ────────────────────────────────────────────────────
+  outputDir: 'test-results/',
 });

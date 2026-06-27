@@ -1,12 +1,8 @@
-
-# Playwright
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
-/tests/demo/
-/allure-results/
+playwright-report/
+allure-results/
 .env
-.vscode/
+.DS_Store
+*.log
+coverage/
+dist/
