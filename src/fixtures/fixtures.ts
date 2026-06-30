@@ -1,12 +1,15 @@
 import { test as base, BrowserContext, Page } from '@playwright/test';
-import { CartPage } from '../pages/inventory/CartPage';       // ✅ named import
-import { CheckoutPage } from '../pages/inventory/CheckoutPage';
-import { InventoryPage } from '../pages/inventory/InventoryPage';
-import { LoginPage } from '../pages/common/LoginPage';
-import AppointmentPage from '../pages/appointment/AppointmentPage';
+import { CartPage } from '../pages/sauceDemo/CartPage';
+import { CheckoutPage } from '../pages/sauceDemo/CheckoutPage';
+import { InventoryPage } from '../pages/sauceDemo/InventoryPage';
+import { SauceLoginPage } from '../pages/sauceDemo/SauceLoginPage';
+import { CuraLoginPage } from '../pages/cura/CuraLoginPage';
+import AppointmentPage from '../pages/cura/AppointmentPage';
 
 type Fixtures = {
-  loginPage: LoginPage;
+  sauceLoginPage: SauceLoginPage;
+  loginPage: SauceLoginPage;
+  curaLoginPage: CuraLoginPage;
   inventoryPage: InventoryPage;
   cartPage: CartPage;
   checkoutPage: CheckoutPage;
@@ -16,8 +19,16 @@ type Fixtures = {
 
 // Extend base test with all page fixtures
 export const test = base.extend<Fixtures>({
-  loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
+  sauceLoginPage: async ({ page }, use) => {
+    await use(new SauceLoginPage(page));
+  },
+
+  loginPage: async ({ sauceLoginPage }, use) => {
+    await use(sauceLoginPage);
+  },
+
+  curaLoginPage: async ({ page }, use) => {
+    await use(new CuraLoginPage(page));
   },
 
   inventoryPage: async ({ page }, use) => {

@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { APPOINTMENT_DATA } from '../../../src/data/appointment.data';
-import LoginPage from '../../../src/pages/common/LoginPage';
-import AppointmentPage from '../../../src/pages/appointment/AppointmentPage';
+import { SauceLoginPage } from '../../../src/pages/sauceDemo/SauceLoginPage';
+import AppointmentPage from '../../../src/pages/cura/AppointmentPage';
 
 test.describe('Appointment flow', () => {
   test('should book an appointment', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+    const loginPage = new SauceLoginPage(page);
     const appointmentPage = new AppointmentPage(page);
 
-    await loginPage.goto(APPOINTMENT_DATA.url);
+    await loginPage.assertLoginSuccess
     await loginPage.login('testuser', 'Password123!');
     await appointmentPage.bookAppointment(
       APPOINTMENT_DATA.appointment.date,

@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="8" failures="0" skipped="0" errors="6" time="6.531042">
-<testsuite name="ui\inventory\inventory.spec.ts" timestamp="2026-06-27T13:12:09.899Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.411" errors="0">
-<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\inventory\inventory.spec.ts" time="2.107">
+<testsuites id="" name="" tests="8" failures="0" skipped="0" errors="2" time="10.668429">
+<testsuite name="ui\sauceDemo\inventory.spec.ts" timestamp="2026-06-30T17:42:17.295Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.696" errors="0">
+<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\sauceDemo\inventory.spec.ts" time="2.37">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
@@ -19,15 +19,15 @@ All product prices are non-zero
 ]]>
 </system-out>
 </testcase>
-<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\inventory\inventory.spec.ts" time="2.304">
+<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\sauceDemo\inventory.spec.ts" time="2.326">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
 </properties>
 </testcase>
 </testsuite>
-<testsuite name="ui\inventory\inventory.spec.ts" timestamp="2026-06-27T13:12:09.899Z" hostname="firefox" tests="2" failures="0" skipped="0" time="0.013" errors="2">
-<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\inventory\inventory.spec.ts" time="0.007">
+<testsuite name="ui\sauceDemo\inventory.spec.ts" timestamp="2026-06-30T17:42:17.295Z" hostname="firefox" tests="2" failures="0" skipped="0" time="0.008" errors="2">
+<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\sauceDemo\inventory.spec.ts" time="0.005">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
@@ -36,56 +36,48 @@ All product prices are non-zero
 </properties>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-firefox\error-context.md]]
+[[ATTACHMENT|ui-sauceDemo-inventory-Inv-83f7e-product-prices-are-non-zero-firefox\error-context.md]]
 ]]>
 </system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe" type="Error">
-<![CDATA[  [firefox] › ui\inventory\inventory.spec.ts:28:5 › Inventory Feature › Should validate all product prices are non-zero @smoke 
+<error message="browserType.launch: Host system is missing dependencies!" type="Error">
+<![CDATA[  [firefox] › ui\sauceDemo\inventory.spec.ts:28:5 › Inventory Feature › Should validate all product prices are non-zero @smoke 
 
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
+    Error: browserType.launch: Host system is missing dependencies!
 
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-firefox\error-context.md
+    Full list of missing libraries:
+        msvcp140_1.dll
+
+
+    Error Context: ..\test-results\ui-sauceDemo-inventory-Inv-83f7e-product-prices-are-non-zero-firefox\error-context.md
 ]]>
 </error>
 </testcase>
-<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\inventory\inventory.spec.ts" time="0.006">
+<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\sauceDemo\inventory.spec.ts" time="0.003">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
 </properties>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-firefox\error-context.md]]
+[[ATTACHMENT|ui-sauceDemo-inventory-Inv-2071a-d-verify-order-confirmation-firefox\error-context.md]]
 ]]>
 </system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe" type="Error">
-<![CDATA[  [firefox] › ui\inventory\inventory.spec.ts:42:5 › Inventory Feature › Should add products to cart, complete checkout and verify order confirmation @regression 
+<error message="browserType.launch: Host system is missing dependencies!" type="Error">
+<![CDATA[  [firefox] › ui\sauceDemo\inventory.spec.ts:42:5 › Inventory Feature › Should add products to cart, complete checkout and verify order confirmation @regression 
 
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
+    Error: browserType.launch: Host system is missing dependencies!
 
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-firefox\error-context.md
+    Full list of missing libraries:
+        msvcp140_1.dll
+
+
+    Error Context: ..\test-results\ui-sauceDemo-inventory-Inv-2071a-d-verify-order-confirmation-firefox\error-context.md
 ]]>
 </error>
 </testcase>
 </testsuite>
-<testsuite name="ui\inventory\inventory.spec.ts" timestamp="2026-06-27T13:12:09.899Z" hostname="webkit" tests="2" failures="0" skipped="0" time="0.009" errors="2">
-<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\inventory\inventory.spec.ts" time="0.004">
+<testsuite name="ui\sauceDemo\inventory.spec.ts" timestamp="2026-06-30T17:42:17.295Z" hostname="webkit" tests="2" failures="0" skipped="0" time="6.466" errors="0">
+<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\sauceDemo\inventory.spec.ts" time="3.22">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
@@ -93,57 +85,26 @@ All product prices are non-zero
 </property>
 </properties>
 <system-out>
-<![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-webkit\error-context.md]]
+<![CDATA[Product: Sauce Labs Backpack, Price: $29.99
+Product: Sauce Labs Bike Light, Price: $9.99
+Product: Sauce Labs Bolt T-Shirt, Price: $15.99
+Product: Sauce Labs Fleece Jacket, Price: $49.99
+Product: Sauce Labs Onesie, Price: $7.99
+Product: Test.allTheThings() T-Shirt (Red), Price: $15.99
+>> Price array: 29.99,9.99,15.99,49.99,7.99,15.99
+All product prices are non-zero
 ]]>
 </system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe" type="Error">
-<![CDATA[  [webkit] › ui\inventory\inventory.spec.ts:28:5 › Inventory Feature › Should validate all product prices are non-zero @smoke 
-
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
-
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-webkit\error-context.md
-]]>
-</error>
 </testcase>
-<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\inventory\inventory.spec.ts" time="0.005">
+<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\sauceDemo\inventory.spec.ts" time="3.246">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
 </properties>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-webkit\error-context.md]]
-]]>
-</system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe" type="Error">
-<![CDATA[  [webkit] › ui\inventory\inventory.spec.ts:42:5 › Inventory Feature › Should add products to cart, complete checkout and verify order confirmation @regression 
-
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
-
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-webkit\error-context.md
-]]>
-</error>
 </testcase>
 </testsuite>
-<testsuite name="ui\inventory\inventory.spec.ts" timestamp="2026-06-27T13:12:09.899Z" hostname="Mobile Chrome" tests="2" failures="0" skipped="0" time="0.012" errors="2">
-<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\inventory\inventory.spec.ts" time="0.005">
+<testsuite name="ui\sauceDemo\inventory.spec.ts" timestamp="2026-06-30T17:42:17.295Z" hostname="Mobile Chrome" tests="2" failures="0" skipped="0" time="7.138" errors="0">
+<testcase name="Inventory Feature › Should validate all product prices are non-zero" classname="ui\sauceDemo\inventory.spec.ts" time="3.43">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
@@ -151,53 +112,22 @@ All product prices are non-zero
 </property>
 </properties>
 <system-out>
-<![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-Mobile-Chrome\error-context.md]]
+<![CDATA[Product: Sauce Labs Backpack, Price: $29.99
+Product: Sauce Labs Bike Light, Price: $9.99
+Product: Sauce Labs Bolt T-Shirt, Price: $15.99
+Product: Sauce Labs Fleece Jacket, Price: $49.99
+Product: Sauce Labs Onesie, Price: $7.99
+Product: Test.allTheThings() T-Shirt (Red), Price: $15.99
+>> Price array: 29.99,9.99,15.99,49.99,7.99,15.99
+All product prices are non-zero
 ]]>
 </system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe" type="Error">
-<![CDATA[  [Mobile Chrome] › ui\inventory\inventory.spec.ts:28:5 › Inventory Feature › Should validate all product prices are non-zero @smoke 
-
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
-
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-9c821-product-prices-are-non-zero-Mobile-Chrome\error-context.md
-]]>
-</error>
 </testcase>
-<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\inventory\inventory.spec.ts" time="0.007">
+<testcase name="Inventory Feature › Should add products to cart, complete checkout and verify order confirmation" classname="ui\sauceDemo\inventory.spec.ts" time="3.708">
 <properties>
 <property name="Story" value="Validate product prices and cart checkout flow on SauceDemo">
 </property>
 </properties>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-Mobile-Chrome\error-context.md]]
-]]>
-</system-out>
-<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe" type="Error">
-<![CDATA[  [Mobile Chrome] › ui\inventory\inventory.spec.ts:42:5 › Inventory Feature › Should add products to cart, complete checkout and verify order confirmation @regression 
-
-    Error: browserType.launch: Executable doesn't exist at C:\Users\anmol\AppData\Local\ms-playwright\webkit-2311\Playwright.exe
-    ╔════════════════════════════════════════════════════════════╗
-    ║ Looks like Playwright was just installed or updated.       ║
-    ║ Please run the following command to download new browsers: ║
-    ║                                                            ║
-    ║     npx playwright install                                 ║
-    ║                                                            ║
-    ║ <3 Playwright Team                                         ║
-    ╚════════════════════════════════════════════════════════════╝
-
-    Error Context: ..\test-results\ui-inventory-inventory-Inv-e2373-d-verify-order-confirmation-Mobile-Chrome\error-context.md
-]]>
-</error>
 </testcase>
 </testsuite>
 </testsuites>

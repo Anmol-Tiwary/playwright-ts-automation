@@ -7,8 +7,9 @@
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/ui",
     "test:api": "npx playwright test tests/api/users.api.spec.ts",
-    "test:inventory": "npx playwright test tests/ui/inventory/inventory.spec.ts",
-    "test:appointment": "npx playwright test tests/ui/appointment/appointment.spec.ts"
+    "test:inventory": "npx playwright test tests/ui/sauceDemo/inventory.spec.ts",
+    "test:appointment": "npx playwright test tests/ui/cura/appointment.spec.ts",
+    "tree": "node generate-tree.cjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
