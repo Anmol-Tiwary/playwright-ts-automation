@@ -2,7 +2,9 @@ node_modules/
 playwright-report/
 allure-results/
 .env
-.DS_Store
 *.log
-coverage/
-dist/
+test-results/
+.playwright-mcp/
+detailed-tree.txt
+generate-tree.cjs
+.github/agents/
