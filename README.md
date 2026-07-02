@@ -32,47 +32,56 @@ This framework is built to reflect real-world SDET practices with a clean, scala
 ## 📁 Project Structure
 
 ```
-playwright-ts-automation/
-├── .github/
-│   └── workflows/
-│       └── playwright.yml          # CI/CD pipeline
-│
-├── src/
-│   ├── pages/
-│   │   ├── common/
-│   │   │   └── LoginPage.ts        # Shared login — used by all test flows
-│   │   ├── inventory/
-│   │   │   ├── InventoryPage.ts
-│   │   │   ├── CartPage.ts
-│   │   │   └── CheckoutPage.ts
-│   │   └── appointment/
-│   │       └── AppointmentPage.ts
-│   │
-│   ├── fixtures/
-│   │   └── fixtures.ts             # Central fixture file — injects all pages
-│   │
-│   ├── helpers/
-│   │   └── file-helpers.ts         # Reusable utility functions
-│   │
-│   └── data/
-│       ├── inventory.data.ts       # Typed test data for SauceDemo
-│       └── appointment.data.ts     # Typed test data for CURA Healthcare
-│
-├── tests/
-│   ├── ui/
-│   │   ├── inventory/
-│   │   │   └── inventory.spec.ts   # SauceDemo E2E tests
-│   │   └── appointment/
-│   │       └── appointment.spec.ts # CURA Healthcare E2E tests
-│   └── api/
-│       └── users.api.spec.ts       # REST API tests (Reqres)
-│
-├── .env.example                    # Environment variable reference
+├── .env
+├── .github
+│   ├── agents
+│   │   ├── playwright-test-generator.agent.md
+│   │   ├── playwright-test-healer.agent.md
+│   │   └── playwright-test-planner.agent.md
+│   └── workflows
+│       ├── copilot-setup-steps.yml
+│       └── playwright.yml
 ├── .gitignore
+├── .vscode
+│   └── mcp.json
+├── generate-tree.cjs
+├── generate-tree.js
+├── package-lock.json
 ├── package.json
-├── playwright.config.ts            # Global Playwright configuration
-├── tsconfig.json
-└── README.md
+├── playwright.config.ts
+├── README.md
+├── specs
+│   └── README.md
+├── src
+│   ├── data
+│   │   ├── appointment.data.ts
+│   │   └── inventory.data.ts
+│   ├── fixtures
+│   │   └── fixtures.ts
+│   ├── helpers
+│   │   └── file-helpers.ts
+│   └── pages
+│       ├── cura
+│       │   ├── AppointmentPage.ts
+│       │   └── CuraLoginPage.ts
+│       └── sauceDemo
+│           ├── CartPage.ts
+│           ├── CheckoutPage.ts
+│           ├── InventoryPage.ts
+│           └── SauceLoginPage.ts
+├── tests
+│   ├── api
+│   │   └── users.api.spec.ts
+│   ├── cura-login-validation-plan.md
+│   ├── seed.spec.ts
+│   └── ui
+│       ├── cura
+│       │   ├── appointment.spec.ts
+│       │   └── cura-login-validation.spec.ts
+│       └── sauceDemo
+│           └── inventory.spec.ts
+└── tsconfig.json
+
 ```
 
 ---
